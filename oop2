@@ -1,0 +1,26 @@
+if (count>1) 
+        {
+         JOptionPane.showMessageDialog(null, "Previse pokusaja", "ERROR", JOptionPane.ERROR_MESSAGE);
+         System.exit(0);   
+        }
+        else
+        {
+            if(txtUsername.getText().equals("") || txtPassword.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(this, "Nisu popunjena polja","GRESKA", JOptionPane.WARNING_MESSAGE);
+            }
+            else if(txtUsername.getText().equals("Hamza") || txtPassword.getText().equals("Hamza"))
+            {
+                JOptionPane.showMessageDialog(this, "Polja su popunjena", "OK", JOptionPane.INFORMATION_MESSAGE);
+                frmMain frm = new frmMain();
+                frm.setVisible(true);
+                dispose();
+            }
+            else 
+            {
+                JOptionPane.showMessageDialog(this, "Pogresni podaci, imate jos"+ String.valueOf(2-count)+ " pokusaja", "OK", JOptionPane.INFORMATION_MESSAGE);
+                count++;
+            }
+        }
+        //JOptionPane.showMessageDialog(null, "Previse pokusaja" + String.valueOf(3-count), "ERROR", JOptionPane.ERROR_MESSAGE);
+    }                 
